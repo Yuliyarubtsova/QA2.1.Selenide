@@ -11,7 +11,8 @@ build: off  # будем использовать свой скрипт сбор
 install:
   # запускаем SUT (& означает, что в фоновом режиме - не блокируем терминал для запуска тестов)
   - java -jar ./artifacts/app-order.jar &
-  - chmod +x gradlew
+  - chmod +x gradlew  # права на запуск скрипта gradlew на люникс
 
 build_script:
-  - ./gradlew test --info  # запускаем тест, флаг --info позволяет выводить больше информации
+#  - ./gradlew test --info  # запускаем тест, флаг --info позволяет выводить больше информации
+  - ./gradlew test --info -Dselenide.headless=true
