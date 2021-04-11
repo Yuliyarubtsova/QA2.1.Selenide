@@ -19,6 +19,7 @@ public class AlfaCardTest {
         $("[type=button]").click();
         $("[data-test-id=order-success]").shouldHave(exactText(" Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
+
     @Test
     void shouldInValidNameTest() {
         open("http://localhost:9999");
